@@ -31,22 +31,22 @@
 const uint8_t PIN_BAT_ADC  = A2; // A0 for micro-usb firebeetle
 // Pins for E-Paper Driver Board
 const uint8_t PIN_EPD_BUSY = 14; // 5 for micro-usb firebeetle
-const uint8_t PIN_EPD_CS   = 13;
-const uint8_t PIN_EPD_RST  = 21;
-const uint8_t PIN_EPD_DC   = 22;
-const uint8_t PIN_EPD_SCK  = 18;
+const uint8_t PIN_EPD_CS   = 10;
+const uint8_t PIN_EPD_RST  = 13;
+const uint8_t PIN_EPD_DC   = 9;
+const uint8_t PIN_EPD_SCK  = 12;
 const uint8_t PIN_EPD_MISO = 19; // 19 Master-In Slave-Out not used, as no data from display
-const uint8_t PIN_EPD_MOSI = 23;
+const uint8_t PIN_EPD_MOSI = 11;
 const uint8_t PIN_EPD_PWR  = 26; // Irrelevant if directly connected to 3.3V
 // I2C Pins used for BME280
-const uint8_t PIN_BME_SDA = 17;
+const uint8_t PIN_BME_SDA = 15;
 const uint8_t PIN_BME_SCL = 16;
 const uint8_t PIN_BME_PWR =  4;   // Irrelevant if directly connected to 3.3V
 const uint8_t BME_ADDRESS = 0x76; // 0x76 if SDO -> GND; 0x77 if SDO -> VCC
 
 // WIFI
-const char *WIFI_SSID     = "ssid";
-const char *WIFI_PASSWORD = "password";
+// const char *WIFI_SSID     = "ssid";
+// const char *WIFI_PASSWORD = "password";
 const unsigned long WIFI_TIMEOUT = 10000; // ms, WiFi connection timeout.
 
 // HTTP
@@ -59,8 +59,8 @@ const unsigned HTTP_CLIENT_TCP_TIMEOUT = 10000; // ms
 
 // OPENWEATHERMAP API
 // OpenWeatherMap API key, https://openweathermap.org/
-const String OWM_APIKEY   = "abcdefghijklmnopqrstuvwxyz012345";
-const String OWM_ENDPOINT = "api.openweathermap.org";
+// const String OWM_APIKEY   = "abcdefghijklmnopqrstuvwxyz012345";
+// const String OWM_ENDPOINT = "api.openweathermap.org";
 // OpenWeatherMap One Call 2.5 API is deprecated for all new free users
 // (accounts created after Summer 2022).
 //
@@ -80,10 +80,10 @@ const String OWM_ONECALL_VERSION = "3.0";
 // LOCATION
 // Set your latitude and longitude.
 // (used to get weather data as part of API requests to OpenWeatherMap)
-const String LAT = "40.7128";
-const String LON = "-74.0060";
+const String LAT = "44.8378";
+const String LON = "-0.5792";
 // City name that will be shown in the top-right corner of the display.
-const String CITY_STRING = "New York";
+const String CITY_STRING = "Bordeaux";
 
 // TIME
 // For list of time zones see
