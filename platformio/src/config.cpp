@@ -16,6 +16,7 @@
  */
 
 #include <Arduino.h>
+#include "secrets.h"
 #include "config.h"
 
 // PINS

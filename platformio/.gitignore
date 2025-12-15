@@ -1,2 +1,79 @@
-.pio
-.vscode
+# -----------------------------------------------------------------------------
+# 1. FICHIERS DE CONFIGURATION SENSIBLES
+# -----------------------------------------------------------------------------
+# Fichier de configuration WiFi (sensible - NE PAS VERSIONNER)
+include/secrets.h
+
+# -----------------------------------------------------------------------------
+# 2. FICHIERS GENERES PAR COMPILATION ET OUTILS
+# -----------------------------------------------------------------------------
+# PlatformIO
+.pio/
+.lib/
+.cache/
+
+# Arduino IDE (fichiers temporaires ou spécifiques à l'utilisateur)
+*.lss
+*.elf.map
+*.o
+
+# Dossiers de construction (temporaires)
+build/
+.build/
+tmp/
+temp/
+.arduino/
+arduino/
+hardware/
+
+# Fichiers compilés (binaires)
+*.hex
+*.elf
+*.bin
+*.lst
+*.map
+*.eep
+*.sym
+*.suo
+
+# -----------------------------------------------------------------------------
+# 3. FICHIERS GENERES PAR L'IDE (VS Code & autres)
+# -----------------------------------------------------------------------------
+.vscode/
+.classpath
+.project
+.settings
+*.user
+*.code-workspace
+
+# -----------------------------------------------------------------------------
+# 4. FICHIERS ET ENVIRONNEMENTS PYTHON
+# -----------------------------------------------------------------------------
+# Environnements virtuels
+venv/
+env/
+VENV/
+ENV/
+
+# Byte-code Python et cache
+*.pyc
+__pycache__/
+.Sphinx/
+
+# -----------------------------------------------------------------------------
+# 5. FICHIERS DE CACHE ET SYSTEME
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# -----------------------------------------------------------------------------
+# 6. LOGS ET FICHIERS TEMPORAIRES
+# -----------------------------------------------------------------------------
+*.log
+*.tmp
+*.cache
