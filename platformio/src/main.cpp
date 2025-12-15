@@ -30,6 +30,9 @@
 #include "display_utils.h"
 #include "icons/icons_196x196.h"
 #include "renderer.h"
+#ifdef USE_TFT_DISPLAY
+  #include "tft_display.h"
+#endif
 
 #if defined(SENSOR_BME280)
   #include <Adafruit_BME280.h>
@@ -339,7 +342,8 @@ void setup()
   String dateStr;
   getDateStr(dateStr, &timeInfo);
 
-  // RENDER FULL REFRESH
+#ifdef USE_EPD_DISPLAY
+  // RENDER FULL REFRESH - E-PAPER
   initDisplay();
   do
   {
@@ -354,14 +358,59 @@ void setup()
     drawStatusBar(statusStr, refreshTimeStr, wifiRSSI, batteryVoltage);
   } while (display.nextPage());
   powerOffDisplay();
+#endif
+
+#ifdef USE_TFT_DISPLAY
+  // INITIALIZE TFT AND BUTTONS
+  initTFT();
+  initButtons();
+  
+  // Afficher la première page
+  displayCurrentPage(owm_onecall, owm_air_pollution, inTemp, inHumidity,
+                    batteryVoltage, wifiRSSI, timeInfo);
+  
+  // Boucle d'interaction avec les boutons (10 minutes max avant deep sleep)
+  unsigned long interactionStart = millis();
+  const unsigned long INTERACTION_TIMEOUT = 600000; // 10 minutes
+  
+  while (millis() - interactionStart < INTERACTION_TIMEOUT) {
+    if (checkButtons()) {
+      // Une page a changé, mettre à jour l'affichage
+      displayCurrentPage(owm_onecall, owm_air_pollution, inTemp, inHumidity,
+                        batteryVoltage, wifiRSSI, timeInfo);
+      interactionStart = millis(); // Réinitialiser le timer
+    }
+    delay(50); // Petite pause pour éviter de surcharger le CPU
+  }
+  
+  // Éteindre l'écran TFT avant deep sleep
+  powerOffTFT();
+#endif
 
   // DEEP SLEEP
   beginDeepSleep(startTime, &timeInfo);
 } // end setup
 
-/* This will never run
+/* This will never run (when deep sleep is enabled)
+ * But can be used for TFT interactive mode
  */
 void loop()
 {
+#ifdef USE_TFT_DISPLAY
+  // Mode interactif continu pour le TFT (désactiver deep sleep si utilisé)
+  if (checkButtons()) {
+    // Une page a changé, mettre à jour l'affichage
+    static owm_resp_onecall_t owm_data;
+    static owm_resp_air_pollution_t air_data;
+    static float temp = 0;
+    static float humidity = 0;
+    static uint32_t voltage = 0;
+    static int rssi = 0;
+    static tm time_info = {};
+    
+    displayCurrentPage(owm_data, air_data, temp, humidity, voltage, rssi, time_info);
+  }
+  delay(50);
+#endif
 } // end loop
 

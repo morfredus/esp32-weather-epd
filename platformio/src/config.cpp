@@ -31,18 +31,38 @@
 const uint8_t PIN_BAT_ADC  = A2; // A0 for micro-usb firebeetle
 // Pins for E-Paper Driver Board
 const uint8_t PIN_EPD_BUSY = 14; // 5 for micro-usb firebeetle
-const uint8_t PIN_EPD_CS   = 10;
-const uint8_t PIN_EPD_RST  = 13;
-const uint8_t PIN_EPD_DC   = 9;
-const uint8_t PIN_EPD_SCK  = 12;
+const uint8_t PIN_EPD_CS   = 13;
+const uint8_t PIN_EPD_RST  = 21;
+const uint8_t PIN_EPD_DC   = 22;
+const uint8_t PIN_EPD_SCK  = 18;
 const uint8_t PIN_EPD_MISO = 19; // 19 Master-In Slave-Out not used, as no data from display
-const uint8_t PIN_EPD_MOSI = 11;
+const uint8_t PIN_EPD_MOSI = 23;
 const uint8_t PIN_EPD_PWR  = 26; // Irrelevant if directly connected to 3.3V
 // I2C Pins used for BME280
 const uint8_t PIN_BME_SDA = 15;
 const uint8_t PIN_BME_SCL = 16;
 const uint8_t PIN_BME_PWR =  4;   // Irrelevant if directly connected to 3.3V
 const uint8_t BME_ADDRESS = 0x76; // 0x76 if SDO -> GND; 0x77 if SDO -> VCC
+
+// ------------------------------------
+// TFT ST7789 (SPI)
+// ------------------------------------
+// Configuration de l'écran couleur (TFT) utilisant le protocole SPI.
+const uint8_t PIN_TFT_MOSI  = 11;  // SPI MOSI (Master Out Slave In) : Broche de données vers l'écran. Câblage direct.
+const uint8_t PIN_TFT_SCLK  = 12;  // SPI Clock (Horloge) : Broche de synchronisation. Câblage direct.
+const uint8_t PIN_TFT_CS    = 10;  // Chip Select : Broche pour activer spécifiquement cet écran. Câblage direct.
+const uint8_t PIN_TFT_DC    = 9;   // Data/Command : Broche pour indiquer si les données sont des pixels ou une commande. Câblage direct.
+const uint8_t PIN_TFT_RST   = 13;  // Reset écran. Pull-up/down selon librairie.
+const uint8_t PIN_TFT_BL    = 7;   // Backlight (Rétroéclairage) : Souvent utilisé avec le PWM pour ajuster la luminosité.
+const uint16_t TFT_WIDTH    = 240; // Largeur de l'écran en pixels
+const uint16_t TFT_HEIGHT   = 240; // Hauteur de l'écran en pixels
+
+// ------------------------------------
+// Boutons
+// ------------------------------------
+const uint8_t PIN_BUTTON_BOOT = 0;   // Bouton BOOT (strap). Réservé au boot.
+const uint8_t PIN_BUTTON_1    = 38;  // Bouton vers GND. Utiliser **Pull-Up interne**.
+const uint8_t PIN_BUTTON_2    = 39;  // Bouton vers GND. Utiliser **Pull-Up interne**.
 
 // WIFI
 // const char *WIFI_SSID     = "ssid";

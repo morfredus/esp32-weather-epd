@@ -21,6 +21,14 @@
 #include <cstdint>
 #include <Arduino.h>
 
+// DISPLAY TYPE
+// Choose which display(s) you want to use:
+// - E-PAPER: Low power e-ink display (original project)
+// - TFT: Color TFT display ST7789 with multi-page navigation
+// You can enable both to have dual display support
+#define USE_EPD_DISPLAY       // E-Paper display support
+#define USE_TFT_DISPLAY       // TFT ST7789 display support
+
 // E-PAPER PANEL
 // This project supports the following E-Paper panels:
 //   DISP_BW_V2 - 7.5in e-Paper (v2)      800x480px  Black/White
@@ -287,6 +295,19 @@ extern const uint8_t PIN_BME_SDA;
 extern const uint8_t PIN_BME_SCL;
 extern const uint8_t PIN_BME_PWR;
 extern const uint8_t BME_ADDRESS;
+// TFT ST7789 Pins
+extern const uint8_t PIN_TFT_MOSI;
+extern const uint8_t PIN_TFT_SCLK;
+extern const uint8_t PIN_TFT_CS;
+extern const uint8_t PIN_TFT_DC;
+extern const uint8_t PIN_TFT_RST;
+extern const uint8_t PIN_TFT_BL;
+extern const uint16_t TFT_WIDTH;
+extern const uint16_t TFT_HEIGHT;
+// Button Pins
+extern const uint8_t PIN_BUTTON_BOOT;
+extern const uint8_t PIN_BUTTON_1;
+extern const uint8_t PIN_BUTTON_2;
 extern const char *WIFI_SSID;
 extern const char *WIFI_PASSWORD;
 extern const unsigned long WIFI_TIMEOUT;
