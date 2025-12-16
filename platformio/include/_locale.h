@@ -73,6 +73,7 @@ extern const char *TXT_WIFI_NO_CONNECTION;
 extern const char *TXT_UNITS_TEMP_KELVIN;
 extern const char *TXT_UNITS_TEMP_CELSIUS;
 extern const char *TXT_UNITS_TEMP_FAHRENHEIT;
+extern const char *TXT_UNITS_TEMP_ABBREVIATED;
 // UNIT SYMBOLS - WIND SPEED
 extern const char *TXT_UNITS_SPEED_METERSPERSECOND;
 extern const char *TXT_UNITS_SPEED_FEETPERSECOND;
@@ -80,6 +81,7 @@ extern const char *TXT_UNITS_SPEED_KILOMETERSPERHOUR;
 extern const char *TXT_UNITS_SPEED_MILESPERHOUR;
 extern const char *TXT_UNITS_SPEED_KNOTS;
 extern const char *TXT_UNITS_SPEED_BEAUFORT;
+extern const char *TXT_UNITS_SPEED_ABBREVIATED;
 // UNIT SYMBOLS - PRESSURE
 extern const char *TXT_UNITS_PRES_HECTOPASCALS;
 extern const char *TXT_UNITS_PRES_PASCALS;
@@ -89,6 +91,7 @@ extern const char *TXT_UNITS_PRES_MILLIBARS;
 extern const char *TXT_UNITS_PRES_ATMOSPHERES;
 extern const char *TXT_UNITS_PRES_GRAMSPERSQUARECENTIMETER;
 extern const char *TXT_UNITS_PRES_POUNDSPERSQUAREINCH;
+extern const char *TXT_UNITS_PRES_ABBREVIATED;
 // UNIT SYMBOLS - VISIBILITY DISTANCE
 extern const char *TXT_UNITS_DIST_KILOMETERS;
 extern const char *TXT_UNITS_DIST_MILES;
