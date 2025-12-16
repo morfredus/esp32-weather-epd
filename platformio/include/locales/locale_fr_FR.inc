@@ -108,16 +108,19 @@ const char *TXT_WIFI_NO_CONNECTION = "Pas de Connexion";
 // UNIT SYMBOLS - TEMPERATURE
 const char *TXT_UNITS_TEMP_KELVIN     = "K";
 const char *TXT_UNITS_TEMP_CELSIUS    = "\260C";
+const char *TXT_UNITS_TEMP_ABBREVIATED = TXT_UNITS_TEMP_CELSIUS;
 const char *TXT_UNITS_TEMP_FAHRENHEIT = "\260F";
 // UNIT SYMBOLS - WIND SPEED
 const char *TXT_UNITS_SPEED_METERSPERSECOND   = "m/s";
 const char *TXT_UNITS_SPEED_FEETPERSECOND     = "ft/s";
 const char *TXT_UNITS_SPEED_KILOMETERSPERHOUR = "km/h";
+const char *TXT_UNITS_SPEED_ABBREVIATED       = "km/h";
 const char *TXT_UNITS_SPEED_MILESPERHOUR      = "mph";
 const char *TXT_UNITS_SPEED_KNOTS             = "kt";
 const char *TXT_UNITS_SPEED_BEAUFORT          = "";
 // UNIT SYMBOLS - PRESSURE
 const char *TXT_UNITS_PRES_HECTOPASCALS             = "hPa";
+const char *TXT_UNITS_PRES_ABBREVIATED              = "hPa";
 const char *TXT_UNITS_PRES_PASCALS                  = "Pa";
 const char *TXT_UNITS_PRES_MILLIMETERSOFMERCURY     = "mmHg";
 const char *TXT_UNITS_PRES_INCHESOFMERCURY          = "inHg";

@@ -178,7 +178,7 @@ void drawTFTCurrentConditions(const owm_resp_onecall_t &owm_onecall,
   // Description météo
   tft.setCursor(8, 60);
   tft.setTextSize(2);
-  tft.println(owm_onecall.current.weather[0].description);
+  tft.println(owm_onecall.current.weather.description);
   
   // Humidité
   tft.setCursor(8, 90);
